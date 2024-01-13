@@ -1,0 +1,9 @@
+{
+  "venvPath": "~/.venvs",
+  "venv": "pybot-picpost",
+  "pythonPath": "bin/python",
+  "extraPaths": [
+    "~/.venvs/pybot-picpost/lib/python3.11/site-packages"
+  ],
+  "verboseOutput": true
+}

@@ -1,0 +1,6 @@
+.mypy-cache
+.venv
+
+schedule.json
+
+trash
