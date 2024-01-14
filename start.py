@@ -3,15 +3,15 @@
 Posts are added to the json database and posted to the channel specified.
 """
 
-import telebot
-import schedule
-from tinydb import TinyDB, where
-from datetime import datetime, date, time, timedelta
-import simplejson as json
-import time as time_sleep
 import os
-from pynput.keyboard import Key, Listener
+import time as time_sleep
+from concurrent.futures import ThreadPoolExecutor
+from datetime import date, datetime, time, timedelta
 
+import schedule
+import simplejson as json
+import telebot
+from tinydb import TinyDB, where
 
 # >> Preamble
 
@@ -98,8 +98,6 @@ def do_a_post(not_todays_post=False):
     print(f'Post with caption {caption} posted')
 
 
-do_a_post()
-
 # >>> Scheduler and bot init
 
 # Schedule to post at a specific time
@@ -107,25 +105,29 @@ scheduled_time = f'{target_time.hour}:{target_time.minute}'
 schedule.every().day.at(scheduled_time).do(do_a_post)
 
 
-# Post on 'p' key press
-def p_key_handler(key):
-    """Do a post when 'p' is pressed."""
-    if key.char == 'p':
-        do_a_post(True)
-
-
-# Listener for key press
-with Listener(on_release=p_key_handler) as listener:
-    listener.join()
-
-
-# Start bot to work without stop
-bot.infinity_polling()
+# # Post on 'p' key press
+# def p_key_handler(key):
+#     """Do a post when 'p' is pressed."""
+#     if key.char == 'p':
+#         do_a_post(True)
+#
+#
+# # Listener for key press
+# with Listener(on_release=p_key_handler) as listener:
+#     listener.join()
 
 # Keep scheduled jobs running
-while True:
-    schedule.run_pending()
-    time_sleep.sleep(1)
+def parallel_scheduler_function():
+    print('Starting post scheduler')
+    while True:
+        schedule.run_pending()
+        time_sleep.sleep(1)
 
-# Polling loop to keep the bot running
-# bot.polling(none_stop=True)
+# Start bot to work without stop
+with ThreadPoolExecutor() as executor:
+    # Submit the parallel function to the thread pool
+    future = executor.submit(parallel_scheduler_function)
+
+    # Start the bot's long polling loop
+    print('Starting bot')
+    bot.infinity_polling()

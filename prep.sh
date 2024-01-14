@@ -12,4 +12,4 @@ python3 -m pip install pyTelegramBotAPI
 python3 -m pip install schedule
 python3 -m pip install tinydb
 python3 -m pip install simplejson
-python3 -m pip install pynput
+#python3 -m pip install pynput
