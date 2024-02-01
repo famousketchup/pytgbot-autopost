@@ -73,7 +73,8 @@ def do_a_post(not_todays_post=False):
         print('No posts are scheduled')
         return False
 
-    # Get scheduled post (today or otherwise first)
+    # Get scheduled post (today or otherwise first database item,
+    # depending on not_todays_post)
     if not_todays_post:
         chosen_post = db.all()[0]
     else:
@@ -103,18 +104,6 @@ def do_a_post(not_todays_post=False):
 # Schedule to post at a specific time
 scheduled_time = f'{target_time.hour}:{target_time.minute}'
 schedule.every().day.at(scheduled_time).do(do_a_post)
-
-
-# # Post on 'p' key press
-# def p_key_handler(key):
-#     """Do a post when 'p' is pressed."""
-#     if key.char == 'p':
-#         do_a_post(True)
-#
-#
-# # Listener for key press
-# with Listener(on_release=p_key_handler) as listener:
-#     listener.join()
 
 # Keep scheduled jobs running
 def parallel_scheduler_function():
