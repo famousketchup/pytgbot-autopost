@@ -1,0 +1,10 @@
+[Unit]
+Description=Run my telegram bot to post memes automatically
+After=network.target
+
+[Service]
+WorkingDirectory=/home/dmitriy/Projects/pytgbot-autopost
+ExecStart=/home/dmitriy/Projects/pytgbot-autopost/.venv/bin/python3 start.py
+
+[Install]
+WantedBy=default.target
