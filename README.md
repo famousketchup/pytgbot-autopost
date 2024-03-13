@@ -7,9 +7,9 @@
 
 # 📅 AutoPost: The Telegram Bot 🤖
 
-*Every day at a time you choose, post to my (or yours) Telegram channel,* \
-*with memes or other picture topics (with a caption!),* \
-*let me introduce: `pytgbot-autopost`*
+_Every day at a time you choose, post to my (or yours) Telegram channel,_ \
+_with memes or other picture topics (with a caption!),_ \
+_let me introduce: `pytgbot-autopost`_
 
 <img src="logo.jpg" title="Logo" width="40%"
   alt="Look at our cute little Python-based helper!"
@@ -29,16 +29,24 @@ Welcome to the **AutoPost Telegram Bot**. It is a simple yet clever Python-based
 ## 🔥 Features 🔥
 
 - **Automated Posting:** Schedule up to 100 images with captions to be posted at chosen time daily. 📆
-- *And... And... Let me think - something else?*
+- _And... And... Let me think - something else?_
 
-## Planned features...
+## Planned features
 
 - **More Media Support:** Whether it's photos, videos, or documents, AutoPost handles it all. 🖼️🎥📄
 - **Interactive Scheduler:** Set up your posting schedule with ease through our intuitive command-line interface. ⏲️
 - **Customizable Templates:** Tailor your messages with dynamic content for that personal touch. ✍️
 - **Logging and Analytics:** Keep track of what's posted and engage your audience more effectively. 📊
 
+<<<<<<< HEAD
+
 ## 🚀 Getting Started 🚀
+
+=======
+
+## 🚀 Usage guide 🚀
+
+> > > > > > > 68732c3 (Finish polishing README.md)
 
 ### Prerequisites
 
@@ -47,10 +55,15 @@ Welcome to the **AutoPost Telegram Bot**. It is a simple yet clever Python-based
 
 ### Installation and simple usage
 
-1. From `git clone` to running a script:
+1. # From `git clone` to running a script:
+
+### 1. Installation and simple usage
+
+_(From `git clone` to running a script):_
 
 1.1. **Installation**
-```bash    
+
+```bash
 git clone https://github.com/dmitriy-korotayev/pytgbot-autopost.git
 cd pytgbot-autopost
 ```
@@ -63,13 +76,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-1.3 **Daemon run**: 
+1.3 **Daemon run**:
 
 ```bash
 python3 main.py
 ```
 
-2. You can use a `šystend-service.service` to automate script launch
+---
+
+### 2. You can use a `šystend-service.service` to automate script launch
+
 ===
 
 ```bash
@@ -82,9 +98,31 @@ sudo systemctl enable autopost-telegram-bot
 sudo systemctl start autopost-telegram-bot
 ```
 
-3. You can just use shell scripts:
+---
+
+### 3. You can just use shell scripts
+
+===
 
 ```bash
 ./1-prep.sh
 ./2-run.sh
+```
+
+### Configure the bot for yourself
+
+#### Current configuration method
+
+```bash
+# TOKEN
+sed -i s/6703451102:AAHFrv3Fjln_o41_TwaRDyFSnIsY13GTTqQ/[YOUR_TOKEN]
+sed -i s/@memetimes/[YOUR_CHANNEL_ID]
+sed -i s/18, 20/[YOUR_POSTING_TIME]/
+sed -i
+```
+
+#### Future configuration method
+
+```bash
+$EDITOR .env
 ```

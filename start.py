@@ -16,7 +16,7 @@ from tinydb import TinyDB, where
 # >> Preamble
 
 # Telegram bot token
-TOKEN = "6703451102:AAHFrv3Fjln_o41_TwaRDyFSnIsY13GTTqQ"
+TOKEN = '6703451102:AAHFrv3Fjln_o41_TwaRDyFSnIsY13GTTqQ'
 # Channel to auto-post images to
 channel_id = '@memetimes'
 # When to post images from queue
@@ -45,7 +45,7 @@ def queue_image(message):
     today = now.date()
     date_to_post = today + timedelta(days=queue_length)
     # except if time has already passed, then tomorrow, with empty queue
-    if queue_length == 0 and now.time() > time(18, 20):
+    if queue_length == 0 and now.time() > target_time:
         date_to_post += timedelta(days=1)
 
     # Save all the necessary data for a queued post
@@ -55,10 +55,11 @@ def queue_image(message):
         'caption': message.caption,
         'scheduled_for': date_to_post.isoformat(),
         'added': now,
-        'posted': 0
+        'posted': 0,
     }
-    json_data = json.dumps(data, default=lambda obj: obj.isoformat()
-                           if isinstance(obj, datetime) else None)
+    json_data = json.dumps(
+        data, default=lambda obj: obj.isoformat() if isinstance(obj, datetime) else None
+    )
     db.insert(json.loads(json_data))
 
     # Reply about scheduled post
@@ -81,7 +82,7 @@ def do_a_post(not_todays_post=False):
         is_not_posted = where('posted') == 0
         is_for_today = where('scheduled_for') == date.today().isoformat()
         chosen_post = db.search((is_not_posted) & (is_for_today))
-        if (len(chosen_post) == 0):
+        if len(chosen_post) == 0:
             print('No posts for today')
             return False
         else:
@@ -105,12 +106,14 @@ def do_a_post(not_todays_post=False):
 scheduled_time = f'{target_time.hour}:{target_time.minute}'
 schedule.every().day.at(scheduled_time).do(do_a_post)
 
+
 # Keep scheduled jobs running
 def parallel_scheduler_function():
     print('Starting post scheduler')
     while True:
         schedule.run_pending()
         time_sleep.sleep(1)
+
 
 # Start bot to work without stop
 with ThreadPoolExecutor() as executor:
