@@ -5,7 +5,7 @@
 
 <div align="center">
 
-# 📅 \\ AutoPost: The Telegram Bot // 🤖
+# 📅 \\\ AutoPost: The Telegram Bot // 🤖
 
 _Every day at a time you choose, post to my (or yours) Telegram channel,_ \
 _with memes or other picture topics (with a caption!),_ \
