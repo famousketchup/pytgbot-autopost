@@ -4,6 +4,7 @@ Posts are added to the json database and posted to the channel specified.
 """
 
 import os
+from dotenv import load_dotenv
 import time as time_sleep
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, time, timedelta
@@ -15,12 +16,17 @@ from tinydb import TinyDB, where
 
 # >> Preamble
 
+load_dotenv()
 # Telegram bot token
-TOKEN = '6703451102:AAHFrv3Fjln_o41_TwaRDyFSnIsY13GTTqQ'
+TOKEN = os.getenv('TG_BOT_TOKEN')
 # Channel to auto-post images to
-channel_id = '@memetimes'
+channel_id = os.getenv('TG_CHANNEL_ID')
 # When to post images from queue
-target_time = time(18, 20)
+posting_hour = os.getenv('POSTING_TIME_HOUR')
+posting_hour = 13 if posting_hour is None else posting_hour
+posting_minute = os.getenv('POSTING_TIME_MINUTE')
+posting_minute = 37 if posting_minute is None else posting_minute
+target_time = time(posting_hour, posting_minute)
 # Debugger set to ipdb
 os.environ['PYTHONBREAKPOINT'] = 'ipdb.set_trace'
 

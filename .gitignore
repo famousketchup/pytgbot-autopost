@@ -1,6 +1,8 @@
 .mypy-cache
 .venv
+venv
 
+.env
 schedule.json
 
 trash
