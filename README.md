@@ -17,9 +17,9 @@ _let me introduce: `pytgbot-autopost`_
 
 </div>
 
-![Build Status](https://img.shields.io/travis/com/yourusername/autopost-telegram-bot/main?style=flat-square)
-![Code Quality](https://img.shields.io/codacy/grade/a1234567890fe0987654321f?style=flat-square)
-![License](https://img.shields.io/github/license/yourusername/autopost-telegram-bot?style=flat-square)
+<!-- ![Build Status](https://img.shields.io/travis/com/yourusername/autopost-telegram-bot/main?style=flat-square) -->
+<!-- ![Code Quality](https://img.shields.io/codacy/grade/a1234567890fe0987654321f?style=flat-square) -->
+<!-- ![License](https://img.shields.io/github/license/yourusername/autopost-telegram-bot?style=flat-square) -->
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg?style=flat-square)
 
 ## Introduction ❤️
