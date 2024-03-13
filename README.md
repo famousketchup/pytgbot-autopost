@@ -38,15 +38,7 @@ Welcome to the **AutoPost Telegram Bot**. It is a simple yet clever Python-based
 - **Customizable Templates:** Tailor your messages with dynamic content for that personal touch. ✍️
 - **Logging and Analytics:** Keep track of what's posted and engage your audience more effectively. 📊
 
-<<<<<<< HEAD
-
-## 🚀 Getting Started 🚀
-
-=======
-
-## 🚀 Usage guide 🚀
-
-> > > > > > > 68732c3 (Finish polishing README.md)
+## 🚀 Usage Guide 🚀
 
 ### Prerequisites
 
