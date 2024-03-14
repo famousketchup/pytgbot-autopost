@@ -96,18 +96,21 @@ sudo systemctl start autopost-telegram-bot
 ```
 - - -
 
-## 🔧 - Configure the bot for yourself - 🔧
+## 3,1 - Configure the bot for yourself - 🔧
 
-### **Current configuration method**
 ```bash
-# TOKEN
-sed -i s/6703451102:AAHFrv3Fjln_o41_TwaRDyFSnIsY13GTTqQ/[YOUR_TOKEN]
-sed -i s/@memetimes/[YOUR_CHANNEL_ID]
-sed -i s/18, 20/[YOUR_POSTING_TIME]/
-sed -i
+cp .env.sample .env
+$EDITOR .env
 ```
 
-### Future configuration method
+## 3,2 - Insttall dependencies -
+
 ```bash
-$EDITOR .env
+pip install -r requirements.txt
+```
+
+## 3,3 - Run the bot - 🔧
+
+```bash
+python3 start.py
 ```
