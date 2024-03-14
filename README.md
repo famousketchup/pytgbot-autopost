@@ -74,7 +74,7 @@ python3 main.py
 
 ---
 
-### 2. You can use a `šystend-service.service` to automate script launch
+### 2. You can use a `šystend-service.service` to automate script launch ⏲️
 
 ```bash
 # Copy service from repo
@@ -88,7 +88,7 @@ sudo systemctl start autopost-telegram-bot
 
 - - -
 
-### 3. You can just use shell scripts
+### 3. You can just use shell scripts ☑️
 
 ```bash
 ./1-prep.sh
@@ -96,20 +96,20 @@ sudo systemctl start autopost-telegram-bot
 ```
 - - -
 
-## 3,1 - Configure the bot for yourself - 🔧
+## 3,1 🔧 - Configure the bot for yourself - 🔧
 
 ```bash
 cp .env.sample .env
 $EDITOR .env
 ```
 
-## 3,2 - Insttall dependencies -
+## 3,2 📥 - Insttall dependencies - 📥
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 3,3 - Run the bot - 🔧
+## 3,3 🤖 - Run the bot - 🤖
 
 ```bash
 python3 start.py
