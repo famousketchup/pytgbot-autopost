@@ -26,7 +26,7 @@ posting_hour = os.getenv('POSTING_TIME_HOUR')
 posting_hour = 13 if posting_hour is None else posting_hour
 posting_minute = os.getenv('POSTING_TIME_MINUTE')
 posting_minute = 37 if posting_minute is None else posting_minute
-target_time = time(posting_hour, posting_minute)
+target_time = time(int(posting_hour), int(posting_minute))
 # Debugger set to ipdb
 os.environ['PYTHONBREAKPOINT'] = 'ipdb.set_trace'
 

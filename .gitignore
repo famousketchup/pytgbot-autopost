@@ -1,8 +1,12 @@
 .mypy-cache
 .venv
 venv
+dotenv
+install
+pip
 
 .env
+!.env.sample
 schedule.json
 
 trash
