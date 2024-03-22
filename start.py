@@ -5,7 +5,7 @@ Posts are added to the json database and posted to the channel specified.
 
 import os
 from dotenv import load_dotenv
-import time as time_sleep
+from time import sleep
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, time, timedelta
 
@@ -40,6 +40,9 @@ db = TinyDB("schedule.json")
 @bot.message_handler(content_types=["photo"])
 def queue_image(message):
     """Handle posts received by a bot and add them to a database."""
+
+    # Wait 1 second for app to process json correctly
+    sleep(1)
 
     # Only handle posts from the owner
     if message.from_user.username != owner_username:
@@ -125,7 +128,7 @@ def parallel_scheduler_function():
     print("Starting post scheduler")
     while True:
         schedule.run_pending()
-        time_sleep.sleep(1)
+        sleep(1)
 
 
 # Start bot to work without stop

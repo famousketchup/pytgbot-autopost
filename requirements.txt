@@ -4,6 +4,6 @@ protobuf==4.25.3
 pyTelegramBotAPI==4.16.1
 schedule==1.2.1
 simplejson==3.19.2
-thread==1.0.1
 tinydb==4.8.0
 cython==3.0.9
+python-dotenv==1.0.1
