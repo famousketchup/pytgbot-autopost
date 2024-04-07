@@ -11,7 +11,12 @@ _Every day at a time you choose, post to my (or yours) Telegram channel,_ \
 _with memes or other picture topics (with a caption!),_ \
 _let me introduce: `pytgbot-autopost`_
 
+![GitHub Release](https://img.shields.io/github/v/release/dmitriy-korotayev/pytgbot-autopost)
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg?style=flat-square)
+<a target="_blank" href="https://www.linkedin.com/in/foreverdev/">
+<img height="20" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/dmitriy-korotayev/pytgbot-autopost/fork)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <img src="logo.jpg" title="Logo" width="40%"
   alt="Look at our cute little Python-based helper!"
